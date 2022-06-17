@@ -1,13 +1,16 @@
 import imp
+from itertools import product
 import graphene
 from graphene_django import DjangoObjectType
 
 from .models import (Product)
-
-class ProductType(DjangoObjectType):
-    pass
+from .types import ProductType
 
 
-
+#  create QueryType to create queries
 class Query(graphene.ObjectType):
-    pass
+    product = graphene.List(ProductType)
+
+    # resolve queries (map query to data)
+    def resolve_product(self, info, **kwargs):
+        return Product.objects.all().order_by('-date_created')
