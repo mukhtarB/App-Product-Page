@@ -1,18 +1,25 @@
-## Fyyur
+## Product App
 
 ## Introduction
 
-Fyyur is a musical venue and artist booking site that facilitates the discovery and bookings of shows between local performing artists and venues. This site lets you list new artists and venues, discover them, and list shows with artists as a venue owner.
-
-Your job is to build out the data models to power the API endpoints for the Fyyur site by connecting to a PostgreSQL database for storing, querying, and creating information about artists and venues on Fyyur.
+Building a Product page for an Inventory System.
+The Page lists all products available and allows users to view each product items summary in detail before adding / removing from cart.
 
 ## Overview
 
-This app is nearly complete. It is only missing one thing… real data! While the views and controllers are defined in this application, it is missing models and model interactions to be able to store retrieve, and update data from a database. By the end of this project, you should have a fully functioning site that is at least capable of doing the following, if not more, using a PostgreSQL database:
+Using Python, Graphene, Docker, etc.
 
--   creating new venues, artists, and creating new shows.
--   searching for venues and artists.
--   learning more about a specific artist or venue.
+-   a) Create a Product model.
+-   b) Create a command to migrate the products data above into the database.
+-   c) Create a GraphQL endpoint to return all the products to the FE.
+-   d) Encapsulate your back-end services in docker containers.
+
+Using React, Context API, and GraphQL
+
+-   a) Create a products page to show the GraphQL fetched products in cards with appropriate product data (name, price, pictures, etc.).
+-   b) Each product should have an "Add to cart" button.
+-   c) On click add to cart, show cart summary component as an overlay and add the product to the cart.
+-   d) Allow increment (+), decrement (-) and delete functionality on each cart item in the cart.
 
 We want Fyyur to be the next new platform that artists and musical venues can use to find each other, and discover new music shows. Let's make that happen!
 
@@ -20,10 +27,12 @@ We want Fyyur to be the next new platform that artists and musical venues can us
 
 ### 1. Backend Dependencies
 
+The Backend of the application is built on django with graphQL powering it's APIs using the graphene, graphene-django package.
+
 Our tech stack will include the following:
 
 -   **virtualenv** as a tool to create isolated Python environments
--   **GRAPHQL** to be our ORM library of choice via graphene-django package
+-   **graphene** to be our ORM library of choice via graphene-django package
 -   **SQLITE** as the default database of choice
 -   **Python3** and **DJANGO** as our server language and server framework
     You can download and install the dependencies mentioned above using `pip` as:
@@ -54,20 +63,20 @@ npm install bootstrap@3
 ```sh
 ├── README.md
 ├── .gitignore
-├── Client/ *** FrontEnd Server - React
-    └──core/
+├── Client *** FrontEnd Server - React
+    └──core
         |──
         └──
-└── Server/ *** Backend Server - Django
-    └──core/
-        |── core/
+└── Server *** Backend Server - Django
+    └──core
+        |── core
             |── settings.py
             |── schema.py
             |── urls.py
             |── asgi.py
             └── wsgi.py
-        |── product/
-            |── migrations/
+        |── product
+            |── migrations
             |── requirements.txt
             └── db.json
         |── manange.py
@@ -75,22 +84,6 @@ npm install bootstrap@3
         |── requirements.txt
         └── db.json
 ```
-
-Overall:
-
--   Models are located in the `MODELS` section of `app.py`.
--   Controllers are also located in `app.py`.
--   The web frontend is located in `templates/`, which builds static assets deployed to the web server at `static/`.
--   Web forms for creating data are located in `form.py`
-
-Highlight folders:
-
--   `templates/pages` -- (Already complete.) Defines the pages that are rendered to the site. These templates render views based on data passed into the template’s view, in the controllers defined in `app.py`. These pages successfully represent the data to the user, and are already defined for you.
--   `templates/layouts` -- (Already complete.) Defines the layout that a page can be contained in to define footer and header code for a given page.
--   `templates/forms` -- (Already complete.) Defines the forms used to create new artists, shows, and venues.
--   `app.py` -- (Missing functionality.) Defines routes that match the user’s URL, and controllers which handle data and renders views to the user. This is the main file you will be working on to connect to and manipulate the database and render views with data to the user, based on the URL.
--   Models in `app.py` -- (Missing functionality.) Defines the data models that set up the database tables.
--   `config.py` -- (Missing functionality.) Stores configuration variables and instructions, separate from the main application code. This is where you will need to connect to the database.
 
 ## Development Setup
 
