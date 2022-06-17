@@ -9,7 +9,7 @@ class ProductMutation(graphene.Mutation):
     id = graphene.Int()
     name = graphene.String()
     description = graphene.String()
-    stock_id = graphene.String()
+    sku = graphene.String()
     price = graphene.Decimal()
     image = graphene.String()
 
@@ -18,17 +18,17 @@ class ProductMutation(graphene.Mutation):
     class Arguments:
         name = graphene.String(required=True)
         description = graphene.String(required=True)
-        stock_id = graphene.String(required=True)
+        sku = graphene.String(required=True)
         price = graphene.Decimal(required=True)
         image = graphene.String(required=True)
     
 
-    def mutate(self, info, name, description, stock_id, price, image):
+    def mutate(self, info, name, description, sku, price, image):
 
         productItem = Product(
             name = name,
             description = description,
-            stock_id = stock_id,
+            sku = sku,
             price = price,
             image = image
         )
@@ -39,7 +39,7 @@ class ProductMutation(graphene.Mutation):
             id = productItem.id,
             name = productItem.name,
             description = productItem.description,
-            stock_id = productItem.stock_id,
+            sku = productItem.sku,
             price = productItem.price,
             image = productItem.image,
         )

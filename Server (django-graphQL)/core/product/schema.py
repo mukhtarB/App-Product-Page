@@ -14,7 +14,7 @@ class Query(graphene.ObjectType):
 
     # resolve queries (map query to data)
     def resolve_product(self, info, **kwargs):
-        return Product.objects.all().order_by('-date_created')
+        return Product.objects.all()
 
 
 class Mutation(graphene.ObjectType):
