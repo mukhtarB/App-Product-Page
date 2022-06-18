@@ -29,22 +29,26 @@ We want Fyyur to be the next new platform that artists and musical venues can us
 
 The Backend of the application is built on django with graphQL powering it's APIs using the graphene, graphene-django package.
 
-Our tech stack will include the following:
+Directory: backend
+Language: Python3
+Framework: Django
+
+Our tech stack includes the following:
 
 -   **virtualenv** as a tool to create isolated Python environments
--   **graphene** to be our ORM library of choice via graphene-django package
--   **SQLITE** as the default database of choice
+-   **graphene** to be our ORM library of choice via the **graphene-django** package
+-   **SQLite** as the default database of choice
 -   **Python3** and **DJANGO** as our server language and server framework
     You can download and install the dependencies mentioned above using `pip` as:
 
 ```
 pip install virtualenv
-pip install -r requirements.txt
+pip install -r requirements.txt, check the development setup to find out how to run the application.
 ```
 
 ### 2. Frontend Dependencies
 
-You must have the **HTML**, **CSS**, and **Javascript** with [Bootstrap 3](https://getbootstrap.com/docs/3.4/customize/) for our website's frontend. Bootstrap can only be installed by Node Package Manager (NPM). Therefore, if not already, download and install the [Node.js](https://nodejs.org/en/download/). Windows users must run the executable as an Administrator, and restart the computer after installation. After successfully installing the Node, verify the installation as shown below.
+<!-- You must have the **HTML**, **CSS**, and **Javascript** with [Bootstrap 3](https://getbootstrap.com/docs/3.4/customize/) for our website's frontend. Bootstrap can only be installed by Node Package Manager (NPM). Therefore, if not already, download and install the [Node.js](https://nodejs.org/en/download/). Windows users must run the executable as an Administrator, and restart the computer after installation. After successfully installing the Node, verify the installation as shown below.
 
 ```
 node -v
@@ -56,7 +60,7 @@ Install [Bootstrap 3](https://getbootstrap.com/docs/3.3/getting-started/) for th
 ```
 npm init -y
 npm install bootstrap@3
-```
+``` -->
 
 ## Main Files: Project Structure
 
@@ -65,8 +69,11 @@ npm install bootstrap@3
 ├── .gitignore
 ├── Client *** FrontEnd Server - React
     └──core
-        |──
-        └──
+        |── public
+        |── src
+        |── config.js
+        |── .gitignore
+        └── README.md
 └── Server *** Backend Server - Django
     └──core
         |── core
@@ -87,33 +94,21 @@ npm install bootstrap@3
 
 ## Development Setup
 
+To run the application locally,
+
+first: [http://127.0.0.1:8000/](run the backend server).
+& then [http://127.0.0.1:8000/](run the frontend server).
+
 1. **Download the project starter code locally**
 
 ```
-git clone https://github.com/udacity/FSND.git
-cd FSND/projects/01_fyyur/starter_code
+git clone https://github.com/mukhtarB/Inventory-Product-Page.git
 ```
 
-2. **Create an empty repository in your Github account online. To change the remote repository path in your local repository, use the commands below:**
+2. **Initialize and activate a virtualenv using:**
 
 ```
-git remote -v
-git remote remove origin
-git remote add origin <https://github.com/<USERNAME>/<REPO_NAME>.git>
-git branch -M master
-```
-
-Once you have finished editing your code, you can push the local repository to your Github account using the following commands.
-
-```
-git add . --all
-git commit -m "your comment"
-git push -u origin master
-```
-
-3. **Initialize and activate a virtualenv using:**
-
-```
+cd Server (django-graphQL)/
 python -m virtualenv env
 source env/bin/activate
 ```
@@ -124,19 +119,25 @@ source env/bin/activate
 source env/Scripts/activate
 ```
 
-4. **Install the dependencies:**
+3. **Install the dependencies:**
 
 ```
 pip install -r requirements.txt
 ```
 
+4. **Seed / Migrate data into db**
+
+```
+cd core
+python manage.py migrate
+python manage.py loaddata db.json
+```
+
 5. **Run the development server:**
 
 ```
-export FLASK_APP=myapp
-export FLASK_ENV=development # enables debug mode
-python3 app.py
+python manage.py runserver
 ```
 
 6. **Verify on the Browser**<br>
-   Navigate to project homepage [http://127.0.0.1:5000/](http://127.0.0.1:5000/) or [http://localhost:5000](http://localhost:5000)
+   Navigate to project homepage [http://127.0.0.1:8000/graphql](http://127.0.0.1:8000//graphql) or [http://localhost:8000/graphql](http://localhost:8000/graphql)
