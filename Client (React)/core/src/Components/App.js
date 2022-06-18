@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from '../logo.svg';
+import ProductItem from './ProductItem/ProductItem';
+
 
 function App() {
     return (
@@ -8,37 +10,7 @@ function App() {
             <h2> Product Page: Item List</h2>
 
             <div className='product-list'>
-
-                <div className='product-item'>
-                    <div className='img-wrapper'>
-                        <img src={logo} alt='Not an image yet' title=''/>
-                    </div>
-
-                    <p>Name: Name of Product</p>
-                    <p>Price: Product Price</p>
-                    <button className='btn btn-primary'>add to cart</button>
-                </div>
-
-                <div className='product-item'>
-                    <div className='img-wrapper'>
-                        <img src={logo} alt='Not an image yet' title=''/>
-                    </div>
-
-                    <p>Name: Name of Product</p>
-                    <p>Price: Product Price</p>
-                    <button className='btn btn-primary'>add to cart</button>
-                </div>
-
-                <div className='product-item'>
-                    <div className='img-wrapper'>
-                        <img src={logo} alt='Not an image yet' title=''/>
-                    </div>
-
-                    <p>Name: Name of Product</p>
-                    <p>Price: Product Price</p>
-                    <button className='btn btn-primary'>add to cart</button>
-                </div>
-
+                    <ProductItem logo={logo}/>
             </div>
         </div>
     );
