@@ -2,6 +2,14 @@ import React from 'react';
 import logo from '../images/logo.svg';
 import ProductItem from './ProductItem/ProductItem';
 
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { endpoint_URI } from '../config';
+
+const client = new ApolloClient({
+    uri: endpoint_URI,
+    cache: new InMemoryCache(),
+});
+
 
 function App() {
     return (
