@@ -1,18 +1,38 @@
-.App {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     text-align: center;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
     color: white;
+    background-color: #282c34;
 }
 
-.App-link {
+.App {
+    min-height: 100vh;
+    padding: 20px;
+    /* border: 1px solid wheat; */
+}
+
+.link {
     color: #61dafb;
 }
+
+.product-list {    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    /* font-size: calc(7px + 2vmin); */
+    /* border: 2px solid yellow; */
+    padding: 20px;
+}
+
+.product-item {
+    /* border: 2px solid red; */
+    padding: 10px;
+    border-radius: 10px;
+}
+
