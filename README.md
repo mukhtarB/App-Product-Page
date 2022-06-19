@@ -98,8 +98,8 @@ npm install bootstrap@3
 
 To run the application locally,
 
-first: [run the backend server](</Server%20(django-graphQL)/core/README.md>).<br>
-& then [run the frontend server](</Client%20(React)/core/README.md>).<br><br>
+first: [run the backend server](</Server%20(django-graphQL)/core>).<br>
+& then [run the frontend server](</Client%20(React)/core>).<br><br>
 
 ### Verify on the Browser
 

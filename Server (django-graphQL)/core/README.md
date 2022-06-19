@@ -10,9 +10,8 @@ Backend API: using Python, Graphene, Docker.
 
 To run the application locally,
 
-first: [run the backend server](</Client%20(React)/README.md>).
-
-& then [run the backend server](</Server%20(django-graphQL)/README.md>).
+first: [run the backend server](</Server%20(django-graphQL)/core>).<br>
+& then [run the frontend server](</Client%20(React)/core>).<br><br>
 
 1. **Download the project starter code locally**
 
