@@ -38,9 +38,9 @@ const PopupModal = ({openModal, modalID, data, onClose}) => {
                         {getImage.description}
                     </div>
                     <div>
-                        <a> + </a>
+                        <a className="btn btn-success btn-sm m-2"> + </a>
                         Qty 2
-                        <a> - </a>
+                        <a className="btn btn-danger btn-sm m-2"> - </a>
                     </div>
                 </div>
 
