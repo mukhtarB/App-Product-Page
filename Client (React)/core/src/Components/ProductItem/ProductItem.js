@@ -1,29 +1,14 @@
 import React from "react";
-import { useQuery, gql } from '@apollo/client';
-
-const PRODUCT_LIST = gql`
-    query ProductList {
-        product {
-            id
-            name
-            image
-            price
-            description
-            sku
-        }
-    }
-`;
+import { useProductsQuery } from "../../queryServices/useProductsQuery";  // custom hook
 
 
 const ProductItem = () => {
+    const { loading, error, data } = useProductsQuery();
 
-    const { loading, error, data } = useQuery(PRODUCT_LIST);
-    // console.log("L,E,D ==>", loading, error, data);
-
-    if (loading) return <p>Loading?...</p>;
+    if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
-    return data.product.map(({ id, name, image, price, description }) => (
+    return data.product.map(({ id, name, image, price }) => (
         <div key={id} className='product-item'>
             <div className='img-wrapper'>
                 <img src={image} alt='Not an image yet' title=''/>
