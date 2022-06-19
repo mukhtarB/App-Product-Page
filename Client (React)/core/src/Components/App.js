@@ -9,7 +9,7 @@ function App() {
             <h2> Product Page: Item List</h2>
 
             <div className='product-list'>
-                <ProductItem logo={logo}/>
+                <ProductItem />
             </div>
         </div>
     );
