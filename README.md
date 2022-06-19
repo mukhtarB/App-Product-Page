@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Building a Product page for an Inventory System.
+Building a Product page for an Ecommercial Application.
 The Page lists all products available and allows users to view each product items summary in detail before adding / removing from cart.
 
 ## Overview
