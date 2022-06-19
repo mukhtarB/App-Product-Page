@@ -10,13 +10,13 @@ const ProductItem = () => {
 
     return data.product.map(({ id, name, image, price }) => (
         <div key={id} className='product-item'>
-            <div className='img-wrapper'>
+            <div className='img-wrapper mb-2'>
                 <img src={image} alt='Not an image yet' title=''/>
             </div>
 
-            <p>Name: {name}</p>
-            <p>Price: {price}</p>
-            <button className='btn btn-primary'>add to cart</button>
+            <div>Name: <b>{name}</b></div>
+            <div>Price: ₦ <b>{price}</b></div>
+            <button className='btn btn-primary mt-2'>add to cart</button>
         </div>
     ));
 }
