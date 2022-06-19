@@ -12,6 +12,11 @@ const ProductItem = () => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
+    const closeModal = () => {
+        setOpen(false);
+        document.body.classList.remove('active-modal');
+    }
+
 
     const renderData = () => {
         return data.product.map(({ id, name, image, price }) => (
@@ -45,7 +50,7 @@ const ProductItem = () => {
                     openModal={isOpen} 
                     modalID={itemID}
                     data={data.product}
-                    onClose={() => setOpen(false)}
+                    onClose={() => closeModal()}
                 />
                 : null
             }

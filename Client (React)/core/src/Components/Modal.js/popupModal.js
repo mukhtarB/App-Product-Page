@@ -6,8 +6,6 @@ const PopupModal = ({openModal, modalID, data, onClose}) => {
 
     if (openModal) {
         document.body.classList.add('active-modal');
-    } else {
-        document.body.classList.remove('active-modal');
     }
 
     const getImage = data.find( (dataItem) => {
