@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../Assets/images/logo.svg';
 import ProductItem from './ProductItem/ProductItem';
 
 

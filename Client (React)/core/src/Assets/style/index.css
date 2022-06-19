@@ -36,17 +36,27 @@ body {
 
 .product-list {    
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
   /* font-size: calc(7px + 2vmin); */
-  /* border: 2px solid yellow; */
+  border: 2px solid yellow;
   padding: 20px;
 }
 
 .product-item {
-  /* border: 2px solid red; */
+  border: 2px solid red;
   padding: 10px;
+  width: 200px;
   border-radius: 10px;
 }
 
+.img-wrapper{
+  width: 300px;
+  height: auto;
+}
+
+.img-wrapper > img {
+  width: 100%;
+}
