@@ -29,7 +29,10 @@ body {
 .App {
   min-height: 100vh;
   padding: 20px;
-  /* outline: 1px solid wheat; */
+}
+
+.App>h2 {
+  font-weight: inherit;
 }
 
 .link {
@@ -42,8 +45,6 @@ body {
   align-items: center;
   justify-content: space-evenly;
   font-size: 20px;
-  /* font-size: calc(7px + 2vmin); */
-  /* outline: 2px solid yellow; */
   padding: 20px;
 }
 
