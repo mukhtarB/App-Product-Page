@@ -47,19 +47,23 @@ pip install -r requirements.txt, check the development setup to find out how to 
 
 ### 2. Frontend Dependencies
 
-<!-- You must have the **HTML**, **CSS**, and **Javascript** with [Bootstrap 3](https://getbootstrap.com/docs/3.4/customize/) for our website's frontend. Bootstrap can only be installed by Node Package Manager (NPM). Therefore, if not already, download and install the [Node.js](https://nodejs.org/en/download/). Windows users must run the executable as an Administrator, and restart the computer after installation. After successfully installing the Node, verify the installation as shown below.
+The frontend is a ReactJs application, built using functional components, hooks and custom hooks.
+The application also uses dependencies such as apollo to query the graphQL server
+
+Language: javaScript
+Framework: React
+
+Our technologies includes the following:
+
+-   **Apollo Client** to send requests to graphQL server.
+-   **React Hooks** to manage state etc.
+-   **javaScript** and **React** as our server language and server framework
+
+All dependies would be installed via
 
 ```
-node -v
-npm -v
+npm install
 ```
-
-Install [Bootstrap 3](https://getbootstrap.com/docs/3.3/getting-started/) for the website's frontend:
-
-```
-npm init -y
-npm install bootstrap@3
-``` -->
 
 ## Main Files: Project Structure
 
@@ -76,6 +80,8 @@ npm install bootstrap@3
         |── constants.js
         |── .gitignore
         └── README.md
+
+
 └── Server *** Backend Server - Django
     └──core
         |── core
