@@ -13,12 +13,9 @@ const ProductItem = () => {
     if (error) return <p>Error :(</p>;
 
 
-    const toggleModal = () => {
-        setOpen(!isOpen);
-    }
-
     const renderData = () => {
         return data.product.map(({ id, name, image, price }) => (
+
             <div key={id} className='product-item'>
                 <div className='img-wrapper mb-2'>
                     <img src={image} alt='Not an image yet' title=''/>
@@ -34,6 +31,7 @@ const ProductItem = () => {
                     add to cart
                 </button>
             </div>
+            
         ));
     }
 
