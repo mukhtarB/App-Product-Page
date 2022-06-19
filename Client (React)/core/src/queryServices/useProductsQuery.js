@@ -7,6 +7,7 @@ const PRODUCT_LIST = gql`
             name
             image
             price
+            description
         }
     }
 `;
