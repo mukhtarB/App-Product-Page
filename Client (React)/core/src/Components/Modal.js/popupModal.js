@@ -6,6 +6,7 @@ const PopupModal = ({openModal, modalID, data, onClose}) => {
 
     if (openModal) {
         document.body.classList.add('active-modal');
+        window.scrollTo(0, 0);
     }
 
     const getImage = data.find( (dataItem) => {
